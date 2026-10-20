@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Виртуальная книжная выставка для детей</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Фоновые эффекты -->
+    <div class="background"></div>
+    <div class="particles"></div>
+
+    <header>
+        <h1>📚 Виртуальная книжная выставка </h1>
+        
+        <p>Добро пожаловать в мир детской книги!</p>
+    </header>
+
+    <!-- Фильтр по возрасту (кнопка "Все книги" удалена) -->
+    <div class="age-filter">
+        <button class="filter-btn active" onclick="filterAge('age-6-8')" id="btn68">6–8 лет</button>
+        <button class="filter-btn" onclick="filterAge('age-10-12')" id="btn1012">10–12 лет</button>
+    </div>
+
+    <!-- Секция 6-8 лет -->
+    <div class="book-section" id="section-6-8">
+        <h2 class="category-heading">🧒 Книги для детей 6–8 лет</h2>
+        <div class="library">
+            <div class="book">
+                <img id="bookImage-6-8" src="" alt="Обложка книги">
+            </div>
+
+            <div class="info">
+                <h2 id="title-6-8"></h2>
+                <h3 id="author-6-8"></h3>
+                <p id="description-6-8"></p>
+
+                <div class="controls">
+                    <button onclick="prevBook('6-8')">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button onclick="nextBook('6-8')">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Секция 10-12 лет -->
+    <div class="book-section" id="section-10-12" style="display: none;">
+        <h2 class="category-heading">👦 Книги для детей 10–12 лет</h2>
+        <div class="library">
+            <div class="book">
+                <img id="bookImage-10-12" src="" alt="Обложка книги">
+            </div>
+
+            <div class="info">
+                <h2 id="title-10-12"></h2>
+                <h3 id="author-10-12"></h3>
+                <p id="description-10-12"></p>
+
+                <div class="controls">
+                    <button onclick="prevBook('10-12')">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </button>
+                    <button onclick="nextBook('10-12')">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка фоновой музыки -->
+    <div class="music">
+        <button onclick="toggleMusic()">🎵 Музыка</button>
+    </div>
+
+    <footer>
+        <p>📖 Читайте книги — открывайте новые миры!</p>
+    </footer>
+
+    <!-- Фоновая музыка -->
+    <audio id="backgroundMusic" loop>
+        <source src="6e255b4b6b8375e.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
